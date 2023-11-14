@@ -13,6 +13,8 @@
         - flexTestimonialSlider()
         - flexFeaturedContentSlider()
         - flexTestimonialCards()
+        - flexHomeHero()
+        - flexDarkCTA()
     - endwhile
 - endif
 
@@ -91,5 +93,17 @@
 - function flexTestimonialCards() {
     - if ( 'testimonial_cards' === get_row_layout() ) :;
         - get_template_part( 'includes/flex/flex', 'testimonial-cards' );
+    - endif;
+- }
+
+- function flexHomeHero() {
+    - if ( 'home_hero' === get_row_layout() ) :;
+        - get_template_part( 'includes/flex/flex', 'home-hero');
+    - endif;
+- }
+
+- function flexDarkCTA() {
+    - if ( 'dark_cta_block' === get_row_layout() ) :;
+        - get_template_part( 'includes/flex/flex', 'dark-cta-block');
     - endif;
 - }

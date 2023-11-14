@@ -1,0 +1,14 @@
+//- Variables
+- $hero_title = get_sub_field('hero_title')
+- $hero_subtitle = get_sub_field('hero_subtitle')
+- $background = get_sub_field('hero_background_image')
+
+section.flex-block.flex-home-hero.overlay(style="background-image:url('<?= $background['url']?>');" aria-label="<?= $background['alt']?>")
+	section.hero-content.bg-circle
+		.bg-circle-wrapper
+			- if($hero_title) :
+				h1: - echo $hero_title
+			- endif
+			- if($hero_subtitle) :
+				h2: - echo $hero_subtitle
+			- endif

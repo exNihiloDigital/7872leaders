@@ -56,7 +56,7 @@ $heading: (
     font-weight: (
         'h1': 700,
         'h2': 700,
-        'h3': 400,
+        'h3': 500,
         'h4': 700,
         'h5': 700,
         'h6': 700,
@@ -72,7 +72,7 @@ $heading: (
         'h6': 15px,
     ),
     text-transform: (
-        'h1': none,
+        'h1': uppercase,
         'h2': none,
         'h3': none,
         'h4': none,

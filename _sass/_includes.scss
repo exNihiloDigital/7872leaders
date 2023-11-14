@@ -280,7 +280,7 @@ article {
             }
         }
         .block {
-            background: color(dark);
+            background: color(three);
             display: none;
             height: 100vh;
             left: 0;
@@ -303,13 +303,14 @@ article {
                 top: 100px;
 
                 ul {
-                    background: color(dark);
+                    background: color(three);
+                    list-style-type: none;
                     max-width: 60%;
                     padding: 5px 0;
 
                     li {
                         position: relative;
-
+                        
                         &.parent {
                             span {
                                 color: white;
@@ -355,7 +356,8 @@ article {
                             cursor: pointer;
                             color: white;
                             display: inline-block;
-                            font-size: 20px;
+                            font-family: font(heading);
+                            font-size: 24px;
                             font-weight: 700;
                             margin-bottom: 10px;
                             transition: all 0.2s;
@@ -961,5 +963,26 @@ aside.contact-info {
                 display: block;
             }
         }
+    }
+}
+.bg-circle{
+    position: relative;
+    
+    &:after{
+        background-color: color(one);
+        border-radius: 50%;
+        // top: 60%;
+        bottom: 40px;
+        content: '';
+        display: block;
+        height: 500px;
+        left: -10%;
+        position: absolute;
+        width: 500px;
+        z-index: 1;
+    }
+    .bg-circle-wrapper{
+        position: relative;
+        z-index: 10;
     }
 }

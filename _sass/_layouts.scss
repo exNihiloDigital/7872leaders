@@ -40,7 +40,9 @@
 }
 
 header {
+    box-shadow: 1px 6px 10px 0px rgba(0,0,0,0.2);
     position: relative;
+    z-index: 99999;
 
     .main-header {
         display: none;
@@ -48,7 +50,7 @@ header {
         @include breakpoint(769px up) {
             display: block;
         }
-        .container {
+        .container, .container-full {
             display: block;
 
             @include breakpoint(769px up) {
@@ -67,7 +69,7 @@ header {
 
                 a {
                     img {
-                        max-width: 200px;
+                        max-width: 300px;
                     }
                 }
             }
@@ -84,6 +86,7 @@ header {
 
                     ul {
                         float: right;
+                        margin: 0;
                         padding: 0;
                         position: relative;
 
@@ -101,9 +104,11 @@ header {
                                 }
                             }
                             a {
-                                color: color('one');
+                                color: color(three);
                                 display: block;
-                                font-weight: bold;
+                                font-size: 24px;
+                                font-family: font(heading);
+                                font-weight: 700;
                                 padding: 40px 5px;
                                 text-transform: uppercase;
 
@@ -115,7 +120,7 @@ header {
 
                             // Dropdown
                             ul.dropdown {
-                                background: color('one');
+                                background: color(two);
                                 box-shadow: 4px 4px 6px transparentize(black, 0.95);
                                 display: none;
                                 margin: 0; // The differential of li padding and dropdown li padding
@@ -134,7 +139,7 @@ header {
                                     @include transition(0.06s);
 
                                     &:hover {
-                                        background: color('two');
+                                        background: color(one);
                                     }
 
                                     &:not(:last-child) {
@@ -195,6 +200,7 @@ header {
 
 #front {
     position: relative;
+    z-index: 10;
 }
 
 #archive,
@@ -223,9 +229,9 @@ section.footer-cta {
     }
 }
 footer {
-    background: color(dark);
+    background: color(three);
 
-    .container {
+    .container, .container-full {
         align-items: stretch;
         display: flex;
         flex-wrap: wrap;

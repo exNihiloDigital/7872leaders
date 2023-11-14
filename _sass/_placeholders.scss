@@ -39,6 +39,7 @@
     color: white;
     cursor: pointer;
     display: inline-block;
+    font-family: font(heading);
     margin: 0 auto 20px;
     padding: 10px 15px;
     text-align: center;
@@ -123,6 +124,7 @@
     &.button-fillup {
         background-color: transparent;
         position: relative;
+        z-index: 1;
 
         &:before {
             background-color: color(one);

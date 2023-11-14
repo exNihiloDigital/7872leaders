@@ -140,4 +140,4 @@ function post_types()
         register_taxonomy($taxonomy["slug"], $taxonomy["post_type"], $taxonomy_args);
     }
 }
-add_action('init', 'post_types');
+// add_action('init', 'post_types');

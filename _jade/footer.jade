@@ -7,7 +7,7 @@
 					- echo get_field('footer_cta_title', 'options')
 				- echo get_field('footer_cta_content', 'options')
 				- if(get_field('footer_cta_link', 'options')) :
-					a.button(
+					a.button.button-fillup(
 						href="<?= get_field('footer_cta_link', 'options')['url'];?>" 
 						target="<?= get_field('footer_cta_link', 'options')['target'];?>"
 						) 
@@ -15,7 +15,7 @@
 				- endif
 			aside 
 				.footer-cta-img-wrapper(style="background-image:url('<?= get_field('footer_cta_image', 'options')['url'];?>');")
-					.circle-offset
+				.circle-offset
 - endif
 
 footer.hrz-padding

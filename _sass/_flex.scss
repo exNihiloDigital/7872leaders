@@ -604,13 +604,34 @@
         }
     }
     &.flex-testimonial-slider {
+        background-position: center;
+        background-size: cover;
+        position: relative;
+
+        &:before{
+            background-color: color(three);
+            content: '';
+            display: block;
+            height: 100%;
+            left: 0;
+            opacity: 0.7;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+        }
         .container {
+            position: relative;
             text-align: center;
+            z-index: 10;
 
             h2 {
+                color: white;
                 margin-bottom: 40px;
             }
             .swiper.testimonial-slider {
+                padding-bottom: 20px;
+
                 .swiper-wrapper {
                     .swiper-slide {
                         padding: 0 40px;
@@ -619,12 +640,13 @@
                             padding: 0 200px;
                         }
                         h4 {
-                            margin-bottom: 5px;
+                            color: white;
+                            line-height: 1.5em;
+                            margin-bottom: 30px;
                         }
                         p {
-                            strong {
-                                text-transform: uppercase;
-                            }
+                            color: white;
+                            font-size: 28px
                         }
                     }
                 }

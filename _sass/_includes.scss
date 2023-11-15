@@ -922,6 +922,7 @@ ul.social-links {
 // ===========================================================
 aside.contact-info {
     margin-bottom: 40px;
+    text-align: right;
 
     @include breakpoint(769px up) {
         margin-bottom: 0;
@@ -929,6 +930,9 @@ aside.contact-info {
     a {
         color: white;
         display: block;
+        font-family: font(heading);
+        font-size: 26px;
+        font-weight: 400;
         margin-bottom: 15px;
 
         @include breakpoint(769px up) {

@@ -1,15 +1,21 @@
 - get_header()
 - if(get_field('footer_CTA', 'options') == "on"): 
 	section.footer-cta.hrz-padding
-		.container.content-block
-			- echo get_field('footer_cta_content', 'options')
-			- if(get_field('footer_cta_button', 'options')) :
-				a.button(
-					href="<?= get_field('footer_cta_button', 'options')['url'];?>" 
-					target="<?= get_field('footer_cta_button', 'options')['target'];?>"
-					) 
-					- echo get_field('footer_cta_button', 'options')['title']
-			- endif
+		.container-lg.content-block
+			section
+				h2.no-underline
+					- echo get_field('footer_cta_title', 'options')
+				- echo get_field('footer_cta_content', 'options')
+				- if(get_field('footer_cta_link', 'options')) :
+					a.button(
+						href="<?= get_field('footer_cta_link', 'options')['url'];?>" 
+						target="<?= get_field('footer_cta_link', 'options')['target'];?>"
+						) 
+						- echo get_field('footer_cta_link', 'options')['title']
+				- endif
+			aside 
+				.footer-cta-img-wrapper(style="background-image:url('<?= get_field('footer_cta_image', 'options')['url'];?>');")
+					.circle-offset
 - endif
 
 footer.hrz-padding
@@ -21,15 +27,17 @@ footer.hrz-padding
 						src="<?php echo esc_url(get_theme_file_uri()) ?>/images/logo-white.png" 
 						alt="<?php bloginfo('name') ?> Logo"
 						)
-			- include('includes/contact-info.php')
 		section
 			- include('includes/social-links.php')
-			.footer-menu
-				- footer_menu()
+			- include('includes/contact-info.php')
 
 	.copyright
-		.container
-			- site_info()
+		.container-full
+			section 
+				p &copy; Copyright <?= date('Y'); ?>, <?= get_bloginfo('name') ?>
+			aside 
+				- footer_menu()
+
 
 - wp_footer()
 

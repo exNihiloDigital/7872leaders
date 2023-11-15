@@ -812,9 +812,57 @@
             h2, h3, h4, h5, h6{
                 color: white;
             }
+            h2{
+                &:after{
+                    background-color: color(light);
+                    height: 1px;
+                }
+            }
             section{
                 .button{
                     margin-top: 20px;
+                }
+            }
+        }
+    }
+    &.flex-three-column-cta-cards{
+        
+        .container, .container-lg{
+            h2{
+                margin-bottom: 40px;
+                text-align: center;
+            }
+            .cta-cards-block{
+                align-items: stretch;
+                display: flex;
+                flex-wrap: wrap;
+
+                @include breakpoint(950px up){
+                    flex-wrap: nowrap;
+                    gap: 40px;
+                }
+                .cta-card{
+                    background-color: white;
+                    border-radius: 10px;
+                    border: 2px solid color(five);
+                    margin-bottom: 40px;
+                    padding: 20px;
+                    text-align: center;
+                    
+                    @include breakpoint(950px up){
+                        flex-basis: 33%;
+                        margin-bottom: 0;
+                        padding: 40px;
+                        min-height: auto;
+                    }
+                    img, picture{
+                        margin: 0 auto 20px;
+                        max-height: 100px;
+                        
+                        @include breakpoint(950px up){
+                            max-height: auto;
+                        }
+                    }
                 }
             }
         }

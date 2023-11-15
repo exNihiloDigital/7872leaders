@@ -15,6 +15,7 @@
         - flexTestimonialCards()
         - flexHomeHero()
         - flexDarkCTA()
+        - flexThreeCardCTA()
     - endwhile
 - endif
 
@@ -105,5 +106,11 @@
 - function flexDarkCTA() {
     - if ( 'dark_cta_block' === get_row_layout() ) :;
         - get_template_part( 'includes/flex/flex', 'dark-cta-block');
+    - endif;
+- }
+
+- function flexThreeCardCTA() {
+    - if ( 'three_card_cta' === get_row_layout() ) :;
+        - get_template_part( 'includes/flex/flex', 'three-card-cta');
     - endif;
 - }

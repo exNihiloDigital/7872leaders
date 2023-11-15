@@ -16,7 +16,7 @@ $heading: (
     desktop: (
         'h1': 80px,
         'h2': 60px,
-        'h3': 50px,
+        'h3': 40px,
         'h4': 30px,
         'h5': 25px,
         'h6': 20px,
@@ -40,7 +40,7 @@ $heading: (
     font-family: (
         'h1': font('heading'),
         'h2': font('heading'),
-        'h3': font('body'),
+        'h3': font('heading'),
         'h4': font('heading'),
         'h5': font('heading'),
         'h6': font('heading'),
@@ -56,7 +56,7 @@ $heading: (
     font-weight: (
         'h1': 700,
         'h2': 700,
-        'h3': 500,
+        'h3': 700,
         'h4': 700,
         'h5': 700,
         'h6': 700,
@@ -65,7 +65,7 @@ $heading: (
     letter-spacing: 0,
     margin-bottom: (
         'h1': 15px,
-        'h2': 15px,
+        'h2': 20px,
         'h3': 15px,
         'h4': 15px,
         'h5': 15px,
@@ -112,7 +112,27 @@ $heading: (
 *:focus {
     outline: 0 !important;
 }
+h2{
+    padding-bottom: 30px;
+    position: relative;
 
+    &:after{
+        background-color: color(dark);
+        bottom: 0;
+        content: '';
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        transform: translateX(-50%);
+        width: 30%;
+    }
+    &.no-underline{
+        &:after{
+            display: none;
+        }
+    }
+}
 a {
     color: color(one);
     font-weight: 700;

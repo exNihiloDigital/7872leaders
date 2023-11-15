@@ -1,0 +1,28 @@
+//- Variables
+- $heading = get_sub_field('heading')
+- $cta_cards = get_sub_field('cta_cards')
+
+section.flex-block.flex-three-column-cta-cards.hrz-padding(class="<?= $bg_color;?>")
+	.container-lg.content-block
+		- if($heading) :
+			h2: - echo $heading
+		- endif
+		- if (have_rows('cta_cards')) :
+			.cta-cards-block
+				- while (have_rows('cta_cards')) : the_row()
+					.cta-card
+						- if(get_sub_field('icon')):
+							img(src="<?= get_sub_field('icon')['url'];?>", alt="<?= get_sub_field('icon')['alt'];?>")
+						- endif
+						- if(get_sub_field('heading')):
+							h3: - echo get_sub_field('heading')
+						- endif
+						- if(get_sub_field('content')):
+							p: - echo get_sub_field('content')
+						- endif
+						- if(get_sub_field('link')):
+							a.button.button-arrow(href="<?= get_sub_field('link')['url'];?>" target="<?= get_sub_field('link')['target'];?>")
+								- echo get_sub_field('link')['title']
+						- endif
+				- endwhile
+		- endif

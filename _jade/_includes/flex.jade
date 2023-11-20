@@ -16,23 +16,24 @@
         - flexHomeHero()
         - flexDarkCTA()
         - flexThreeCardCTA()
+        - flexFullWidthQuote()
     - endwhile
 - endif
 
 - function flexContent() {
-    - if ( 'content' === get_row_layout() ) :;
+    - if ( 'content_block' === get_row_layout() ) :;
         - get_template_part( 'includes/flex/flex', 'content');
     - endif;
 - }
 
 - function flexContentAndImage() {
-    - if ( 'content_and_image' === get_row_layout() ) :;
+    - if ( 'content_and_image_block' === get_row_layout() ) :;
         - get_template_part( 'includes/flex/flex', 'content-image' );
     - endif;
 - }
 
 - function flexAccordion() {
-    - if ( 'accordion' === get_row_layout() ) :;
+    - if ( 'accordion_block' === get_row_layout() ) :;
         - get_template_part( 'includes/flex/flex', 'accordion' );
     - endif;
 - }
@@ -112,5 +113,11 @@
 - function flexThreeCardCTA() {
     - if ( 'three_card_cta' === get_row_layout() ) :;
         - get_template_part( 'includes/flex/flex', 'three-card-cta');
+    - endif;
+- }
+
+- function flexFullWidthQuote() {
+    - if ( 'full_width_quote' === get_row_layout() ) :;
+        - get_template_part( 'includes/flex/flex', 'full-width-quote');
     - endif;
 - }

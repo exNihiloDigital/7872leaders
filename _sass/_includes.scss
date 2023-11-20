@@ -96,6 +96,11 @@ article {
     ol {
         color: white;
     }
+    h2{
+        &:after{
+            background-color: white;
+        }
+    }
     a {
         &:hover {
             color: color(two);
@@ -104,6 +109,13 @@ article {
     .button-ghost {
         border-color: white;
         color: white;
+    }
+    .accordion{
+        .acc-tab{
+            h3, .accordion-content, p{
+                color: color(dark);
+            }
+        }
     }
 }
 
@@ -115,6 +127,12 @@ article {
 }
 .bg-color-three {
     background-color: color(three);
+
+    .container-lg{
+        .quote-mark{
+            background-color: color(one) !important;
+        }
+    }
 }
 .bg-color-light {
     background-color: color(light);
@@ -122,10 +140,10 @@ article {
 .bg-color-dark {
     background-color: color(dark);
 }
-.bg-color-transparent {
-    background-color: transparent;
+.bg-color-white {
+    background-color: white;
 }
-.bg-color-transparent + .bg-color-transparent {
+.bg-color-white + .bg-color-white {
     .container {
         padding-top: 0; // if two white/transparent blocks are next to each other, remove bottom padding of first section
     }
@@ -396,19 +414,27 @@ article {
     position: relative;
     width: 100%;
 
-    .container {
-        text-align: center;
+    &.bg-circle{
+        overflow: hidden;
+
+        &:before{
+            bottom: unset;
+            top: 20%;
+            z-index: 10;
+        }
+    }
+    .container-lg {
+        text-align: left;
         position: relative;
         z-index: 10;
+        padding: 100px 0 60px;
 
+        @include breakpoint(769px up) {
+            padding: 180px 0 80px;
+        }
         h1 {
             color: white;
             margin: 0;
-            padding: 100px 0;
-
-            @include breakpoint(769px up) {
-                padding: 180px 0;
-            }
         }
     }
 
@@ -427,7 +453,7 @@ article {
     z-index: 1;
 
     &:after {
-        background-color: rgba(0, 0, 0, 0.3);
+        background-color: rgba(color(three), 0.6);
         bottom: 0;
         content: '';
         display: block;
@@ -556,23 +582,30 @@ article {
 // Accordion
 // ===========================================================
 .accordion {
+    border: 2px solid color(five);
+    border-radius: 10px;
     cursor: pointer;
+    overflow: hidden;
 
     .acc-tab {
-        border-bottom: 1px solid color(light);
+        background-color: white;
+        border-bottom: 2px solid color(five);
 
         &:last-child {
             border-bottom: 0;
+
+            .accordion-content{
+                padding-bottom: 20px;
+            }
         }
         h3 {
             align-items: center;
             display: flex;
-            font-family: font(body);
-            font-size: 20px;
+            font-size: 24px;
             font-weight: 700;
             justify-content: space-between;
             margin: 0;
-            padding: 15px 0;
+            padding: 20px 40px;
             position: relative;
 
             &:after {
@@ -582,13 +615,14 @@ article {
                 font-family: 'Font Awesome 6 Pro';
                 font-weight: 400;
                 height: 35px;
+                position: relative;
                 text-align: center;
                 transform: rotate(0deg);
                 transition: transform 0.2s;
                 width: 35px;
 
                 @include breakpoint(769px up) {
-                    top: 3px;
+                    top: 5px;
                 }
             }
 
@@ -601,7 +635,11 @@ article {
 
         .accordion-content {
             display: none;
-            padding: 0 0 20px;
+            padding: 0 20px;
+            
+            @include breakpoint(769px up){
+                padding: 0 40px;
+            }
         }
 
         &.active {
@@ -785,11 +823,13 @@ article {
     align-items: stretch;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column-reverse;
     gap: 0;
     row-gap: 40px;
-
+    
     @include breakpoint(769px up) {
-        gap: 30px;
+        flex-direction: initial;
+        gap: 60px;
     }
     // use column gap
     .column {
@@ -829,8 +869,11 @@ article {
 // Image Alignment
 // ===========================================================
 .img-alignment-left {
-    .container {
-        flex-direction: row-reverse;
+    .container, .container-lg {
+        
+        @include breakpoint(769px up){
+            flex-direction: row-reverse;
+        }
     }
 }
 
@@ -972,7 +1015,7 @@ aside.contact-info {
 .bg-circle{
     position: relative;
     
-    &:after{
+    &:before{
         background-color: color(one);
         border-radius: 50%;
         // top: 60%;

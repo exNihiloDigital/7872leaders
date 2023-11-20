@@ -5,13 +5,14 @@
 // ================================================================
 
 body.login {
-    background: url('../../images/login.jpg') #242424;
+    background: url('../../images/login.jpg') #DFEAE4;
     background-position: center;
     background-size: cover;
-
+    
     div#login {
         h1 a {
             background: url('../../images/logo.png') center no-repeat;
+            background-size: contain;
             width: 100%;
         }
 

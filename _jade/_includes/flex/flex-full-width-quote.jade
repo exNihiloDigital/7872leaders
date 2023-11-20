@@ -1,0 +1,15 @@
+//- Variables
+- $background_color = "bg-color-" . get_sub_field('background_color')
+- $quote = get_sub_field('quote')
+- $quote_name = get_sub_field('quote_name')
+
+section.flex-block.flex-full-width-quote.hrz-padding(class="<?= $background_color;?>")
+	.container-lg.vert-padding
+		.quote-mark
+		- if($quote) :
+			h3: - echo $quote
+		- endif
+		- if($quote) :
+			p.quote-name: strong -
+				- echo $quote_name
+		- endif

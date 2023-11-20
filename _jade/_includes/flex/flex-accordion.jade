@@ -1,10 +1,10 @@
 //- Variables
-- $bg_color = "bg-color-" . get_sub_field('background_color')
+- $background_color = "bg-color-" . get_sub_field('background_color')
 - $heading = get_sub_field('heading')
 - $subheading = get_sub_field('sub_heading')
 - $content = get_sub_field('content')
 
-section.flex-block.flex-accordion.hrz-padding(class="<?= $bg_color;?>")
+section.flex-block.flex-accordion.hrz-padding(class="<?= $background_color;?>")
 	.container.vert-padding
 		- if($heading) :
 			h2: - echo $heading
@@ -25,7 +25,7 @@ section.flex-block.flex-accordion.hrz-padding(class="<?= $bg_color;?>")
 								- echo get_sub_field('title')
 						.accordion-content(
 							style="<?php if($acc_num == 1){ echo 'display: block;'; };?>")
-							p: - echo get_sub_field('content')
+							- echo get_sub_field('content')
 					- $acc_num++
 				- endwhile
 		- endif

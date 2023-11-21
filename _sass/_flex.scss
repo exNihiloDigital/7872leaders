@@ -849,6 +849,10 @@
                 font-weight: 400;
                 margin-bottom: 0;
                 text-transform: uppercase;
+
+                &:after{
+                    display: none;
+                }
             }
         }
     }

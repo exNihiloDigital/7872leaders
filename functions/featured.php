@@ -51,7 +51,11 @@ function featured( $key )
 
     if (is_single() ) {
         array_push($title, get_the_title());
-        array_push($image, get_theme_file_uri() . '/images/featured.jpg');
+        if (has_post_thumbnail() ) {
+            array_push($image, wp_get_attachment_image_src(get_post_thumbnail_id(), 'full')[0]);
+        } else {
+            array_push($image, esc_url(get_theme_file_uri()) . '/images/featured.jpg');
+        }
     }
 
     if (is_date() ) {

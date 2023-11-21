@@ -206,6 +206,7 @@ header {
 #archive,
 #index,
 #search {
+    border-bottom: 10px solid color(three);
     padding: 0 40px;
 
     @include breakpoint(769px down) {
@@ -217,10 +218,88 @@ header {
         @include breakpoint(769px up) {
             display: flex;
             flex-flow: row wrap;
-            justify-content: flex-start;
+            justify-content: center;
         }
     }
 }
+
+#single{
+    h2{
+        padding-bottom: 0;
+
+        &:after{
+            display: none;
+        }
+    }
+    p strong{
+        font-family: font(heading);
+    }
+    .container-lg{
+        &:first-child{
+            align-items: stretch;
+            border-bottom: 1px solid black;
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+            padding: 40px 0 20px;
+
+            @include breakpoint(769px up){
+                flex-wrap: nowrap;
+            }
+            aside{
+                flex-basis: 100%;
+
+                @include breakpoint(769px up){
+                    flex: 1;
+                }
+                p{
+                    margin-bottom: 0;
+                }
+            }
+            section{
+                flex-basis: 100%;
+
+                @include breakpoint(769px up){
+                    flex: 1;
+                    text-align: right;
+                }
+                ul.share{
+                    list-style-type: none;
+                    margin: 0; 
+                    padding: 0;
+
+                    li{
+                        display: inline-block;
+                        margin-bottom: 0;
+                        padding-left: 30px;
+
+                        &:before, &:after{
+                            display: none;
+                        }
+                        p{
+                            margin: 0;
+                            padding: 0;
+                        }
+                        a{
+                            color: color(three);
+                            cursor: pointer;
+                            font-size: 26px;
+                            
+                            &:hover{
+                                color: color(one);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &:last-child{
+            border-bottom: 1px solid black;
+            padding-bottom: 60px;
+        }
+    }
+}
+
 section.footer-cta {
     background-color: color(four);
 

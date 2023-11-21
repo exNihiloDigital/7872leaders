@@ -6,12 +6,12 @@
 - endif
 
 .post
-    a.post-image(href="<?php echo get_permalink() ?>" style="background-image: url(<?php echo $thumbnail ?>)")
+    a.post-image(href="<?php echo get_permalink() ?>" style="background-image: url(<?php echo $thumbnail ?>)" aria-label="<?= get_the_title();?>")
 
     .post-content
         h2
             a(href="<?php echo get_permalink() ?>"): - the_title()
-
+        p: strong: - echo get_the_date()
         - the_excerpt()
 
-        a.button(href="<?php echo get_permalink() ?>") Continue
+        a.button.button-fillup(href="<?php echo get_permalink() ?>") Continue

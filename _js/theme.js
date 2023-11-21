@@ -20,6 +20,9 @@ jQuery(function ($) {
     flexTestimonialSlider($);
     flexFeaturedContentSlider($);
     flexTestimonialCards($);
+    
+    // Add copy functionality to post share
+    new ClipboardJS('.copy_btn');
 });
 
 /**

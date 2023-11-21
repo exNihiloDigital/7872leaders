@@ -427,10 +427,10 @@ article {
         text-align: left;
         position: relative;
         z-index: 10;
-        padding: 100px 0 60px;
+        padding: 150px 0 60px;
 
         @include breakpoint(769px up) {
-            padding: 180px 0 80px;
+            padding: 250px 0 80px;
         }
         h1 {
             color: white;
@@ -534,8 +534,11 @@ article {
 
 .post {
     background: white;
-    margin-bottom: 40px;
+    border: 2px solid #c5d3cb;
+    border-radius: 40px;
+    margin-bottom: 60px;
     margin-right: 40px;
+    overflow: hidden;
     width: 100%;
 
     @include breakpoint(880px up) {
@@ -548,12 +551,24 @@ article {
         display: block;
         height: 250px;
         margin: 0 auto;
+        position: relative;
         width: 100%;
+
+        &:before{
+            background-color: color(three);
+            content: '';
+            display: block;
+            height: 100%;
+            left: 0;
+            opacity: 0.4;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
     }
 
     .post-content {
-        background-color: #efefef;
-        padding: 30px;
+        padding: 40px;
 
         h1,
         h2,
@@ -567,13 +582,26 @@ article {
                 transition: all 0.2s;
             }
         }
+        h2{
+            font-size: 30px;
+            margin-bottom: 10px;
+            padding-bottom: 0;
 
-        p {
-            margin: 20px auto 25px;
+            @include breakpoint(769px up){
+                font-size: 40px;
+            }
+            &:after{
+                display: none;
+            }
         }
-
+        p {
+            margin: 0px auto 20px;
+        }
+        p strong{
+            font-family: font(heading);
+        }
         .button {
-            margin: 0;
+            margin: 20px 0 0;
         }
     }
 }

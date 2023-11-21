@@ -1,7 +1,12 @@
 - get_header()
 
-article#single
-    .container.content-block
+article#single.hrz-padding
+    .container-lg 
+        aside 
+            p: strong: - echo get_the_date()
+        section 
+            - include('includes/share-buttons.php')
+    .container-lg
         - if (have_posts()) :
             - while (have_posts()) : the_post()
                 - the_content()

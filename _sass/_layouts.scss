@@ -206,7 +206,6 @@ header {
 #archive,
 #index,
 #search {
-    border-bottom: 10px solid color(three);
     padding: 0 40px;
 
     @include breakpoint(769px down) {
@@ -302,6 +301,7 @@ header {
 
 section.footer-cta {
     background-color: color(four);
+    border-top: 10px solid color(three);
 
     .container, .container-lg {
         align-items: stretch;

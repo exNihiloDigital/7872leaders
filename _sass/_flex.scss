@@ -674,9 +674,24 @@
                             line-height: 1.5em;
                             margin-bottom: 30px;
                         }
-                        p {
-                            color: white;
-                            font-size: 28px
+                        .testimonial-name-wrapper{
+                            .testimonial-image{
+                                background-position: center;
+                                background-size: cover;
+                                border: 1px solid #c5d3cb;
+                                border-radius: 50%;
+                                display: inline-block;
+                                height: 100px;
+                                margin-right: 20px;
+                                width: 100px;
+                                vertical-align: middle;
+                            }
+                            p {
+                                color: white;
+                                display: inline-block;
+                                font-size: 28px;
+                                vertical-align: middle;
+                            }
                         }
                     }
                 }

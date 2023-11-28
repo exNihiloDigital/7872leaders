@@ -12,7 +12,11 @@ section.flex-block.flex-testimonial-slider.hrz-padding(style="background-image: 
 					- while (have_rows('testimonials')) : the_row()
 						.swiper-slide
 							h4: - echo get_sub_field('testimonial')
-							p: - echo get_sub_field('testimonial_name')
+							.testimonial-name-wrapper
+								- if(get_sub_field('testimonial_image')):
+									.testimonial-image(style="background-image: url('<?= get_sub_field('testimonial_image')['url'];?>');")
+								- endif
+								p: - echo get_sub_field('testimonial_name')
 					- endwhile
 				.swiper-button-prev
 				.swiper-button-next

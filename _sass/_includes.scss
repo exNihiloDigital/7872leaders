@@ -246,7 +246,7 @@ article {
             z-index: 99999;
 
             img {
-                width: 120px;
+                width: 160px;
             }
         }
         .menu-icon {
@@ -1050,11 +1050,16 @@ aside.contact-info {
         bottom: 40px;
         content: '';
         display: block;
-        height: 500px;
+        height: 250px;
         left: -10%;
         position: absolute;
-        width: 500px;
+        width: 250px;
         z-index: 1;
+        
+        @include breakpoint(769px up){
+            height: 500px;
+            width: 500px;
+        }
     }
     .bg-circle-wrapper{
         position: relative;
@@ -1067,10 +1072,10 @@ aside.contact-info {
     bottom: -20px;
     content: '';
     display: block;
-    height: 350px;
+    height: 300px;
     position: absolute;
     right: -20px;
-    width: 350px;
+    width: 300px;
     z-index: 1;
 
     @include breakpoint(769px up){

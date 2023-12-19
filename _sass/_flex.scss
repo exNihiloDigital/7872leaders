@@ -840,22 +840,30 @@
             display: block;
             height: 100%;
             left: 0;
+            opacity: 0.5;
             overflow: hidden;
             position: absolute;
             top: 0;
             width: 100%;
             z-index: 1;
+            
+            @include breakpoint(769px up){
+                opacity: 1;
+            }
         }
         section.hero-content{
             // background-color: white;
             bottom: 0;
             left: 0;
-            padding: 0 80px 10% 5%;
+            padding: 0 20px 10%;
             position: absolute;
             text-align: left;
             width: 100%;
             z-index: 100;
-
+            
+            @include breakpoint(769px up){
+                padding: 0 80px 10% 5%;
+            }
             h1, h2{
                 color: white;
             }
@@ -875,6 +883,7 @@
         background-color: color(three);
         background-size: 25%;
         color: white;
+        overflow: hidden;
         position: relative;
 
         .container{

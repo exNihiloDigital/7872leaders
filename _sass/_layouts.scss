@@ -336,10 +336,10 @@ section.footer-cta {
                 display: block;
                 position: relative;
                 max-width: 100%;
-                height: 350px;
+                height: 300px;
                 margin: 0 auto;
                 position: relative;
-                width: 350px;
+                width: 300px;
                 z-index: 10;
                 
                 @include breakpoint(769px up){
@@ -348,10 +348,14 @@ section.footer-cta {
                 }
             }
             .circle-offset{
-                left: 50%;
+                left: 41%;
                 right: unset;
                 transform: translateX(-40%);
                 bottom: -30px;
+                
+                @include breakpoint(769px up){
+                    left: 50%;
+                }
             }
         }
     }
@@ -394,6 +398,13 @@ footer {
 
                 @include breakpoint(769px up){
                     text-align: right;
+                }
+                a, p{
+                    font-size: 20px;
+
+                    @include breakpoint(769px up){
+                        font-size: 26px;
+                    }
                 }
             }
             .footer-menu {

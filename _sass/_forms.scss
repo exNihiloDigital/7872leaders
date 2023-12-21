@@ -131,3 +131,30 @@
     background: #f1f1f1;
     border-radius: 4px;
 }
+
+.wpcf7{
+    text-align: center;
+    width: 100%;
+    
+    @include breakpoint(769px up){
+        margin: 0 auto;
+        width: 50%;
+    }
+    form.wpcf7-form{
+        
+        p{
+            text-align: left;
+
+            input.wpcf7-submit{
+                @extend %button;
+            }
+            label{
+                span{
+                    input, textarea{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

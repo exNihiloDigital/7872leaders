@@ -690,7 +690,9 @@
                                 color: white;
                                 display: inline-block;
                                 font-size: 28px;
+                                text-align: left;
                                 vertical-align: middle;
+                                width: calc(100% - 120px);
                             }
                         }
                     }
@@ -923,15 +925,34 @@
             }
             h3{
                 line-height: 1.5em;
+                margin-bottom: 40px;
             }
-            p.quote-name{
-                color: color(two);
-                font-size: 28px;
-                margin-left: 60px;
-
-                @include breakpoint(769px up){
-                    font-size: 35px;
+            .quote-name-wrapper{
+                
+                .quote-image{
+                    background-position: center;
+                    background-size: cover;
+                    border: 1px solid #c5d3cb;
+                    border-radius: 50%;
+                    display: inline-block;
+                    height: 100px;
+                    margin-right: 0;
+                    width: 100px;
+                    vertical-align: middle;
                 }
+                p.quote-name{
+                    color: color(five);
+                    display: inline-block;
+                    font-size: 26px;
+                    margin-left: 30px;
+    
+                    @include breakpoint(769px up){
+                        font-size: 35px;
+                    }
+                }
+            }
+            a.button{
+                margin-top: 40px;
             }
         }
     }

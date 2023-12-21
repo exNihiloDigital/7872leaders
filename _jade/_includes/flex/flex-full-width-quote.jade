@@ -10,6 +10,15 @@ section.flex-block.flex-full-width-quote.hrz-padding(class="<?= $background_colo
 			h3: - echo $quote
 		- endif
 		- if($quote) :
-			p.quote-name: strong -
-				- echo $quote_name
+			.quote-name-wrapper 
+				- if(get_sub_field('quote_image')):
+					.quote-image(style="background-image: url('<?= get_sub_field('quote_image')['url'];?>');")
+				- endif
+				p.quote-name
+					- echo $quote_name
+		- endif
+		- if(get_sub_field('button')):
+			.center-content
+				a.button.button-ghost(href="<?= get_sub_field('button')['url'];?>" target="<?= get_sub_field('button')['target'];?>" aria-label="<?= get_sub_field('button')['title'];?>" )
+					- echo get_sub_field('button')['title']
 		- endif

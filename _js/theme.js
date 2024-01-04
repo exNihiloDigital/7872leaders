@@ -271,7 +271,7 @@ const flexTestimonialSlider = ($) => {
             prevEl: '.swiper-button-prev',
         },
         autoplay: {
-            delay: 4000,
+            delay: 8000,
             disableOnInteraction: false,
         },
         pagination: {

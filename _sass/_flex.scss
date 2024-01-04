@@ -664,15 +664,20 @@
 
                 .swiper-wrapper {
                     .swiper-slide {
-                        padding: 0 40px;
-
+                        padding: 0 20px;
+                        
                         @include breakpoint(769px up) {
                             padding: 0 200px;
                         }
                         h4 {
                             color: white;
+                            font-size: 22px;
                             line-height: 1.5em;
                             margin-bottom: 30px;
+
+                            @include breakpoint(769px up){
+                                font-size: 25px;
+                            }
                         }
                         .testimonial-name-wrapper{
                             .testimonial-image{
@@ -689,10 +694,14 @@
                             p {
                                 color: white;
                                 display: inline-block;
-                                font-size: 28px;
+                                font-size: 21px;
                                 text-align: left;
                                 vertical-align: middle;
                                 width: calc(100% - 120px);
+                                
+                                @include breakpoint(769px up){
+                                    font-size: 28px;
+                                }
                             }
                         }
                     }
@@ -828,10 +837,13 @@
     &.flex-home-hero {
         background-position: center;
         background-size:cover;
-        height: 584px;
+        height: 450px;
         position: relative;
         width: 100%;
         
+        @include breakpoint(600px up){
+            height: 584px;
+        }
         @include breakpoint(950px up){
             height: 871px;
         }
@@ -868,6 +880,9 @@
             }
             h1, h2{
                 color: white;
+            }
+            h1{
+                text-align: center;
             }
             h2{
                 font-size: 40px;
@@ -924,8 +939,13 @@
                 width: 100px;
             }
             h3{
+                font-size: 24px;
                 line-height: 1.5em;
                 margin-bottom: 40px;
+
+                @include breakpoint(769px up){
+                    font-size: 30px;
+                }
             }
             .quote-name-wrapper{
                 
@@ -955,6 +975,11 @@
                 margin-top: 40px;
             }
         }
+        &.bg-color-white{
+            .quote-name{
+                color: color(dark) !important;
+            }
+        }
     }
     &.flex-three-column-cta-cards{
         
@@ -976,6 +1001,7 @@
                     background-color: white;
                     border-radius: 10px;
                     border: 2px solid color(five);
+                    flex-basis: 100%;
                     margin-bottom: 40px;
                     padding: 20px;
                     text-align: center;

@@ -1,7 +1,7 @@
 - $background_image = get_sub_field('background_image') ? get_sub_field('background_image')['url'] : ''
 - $heading = get_sub_field('heading')
 
-section.flex-block.flex-testimonial-slider.hrz-padding(style="background-image: url('<?= $background_image;?>');")
+section.flex-block.flex-testimonial-slider(style="background-image: url('<?= $background_image;?>');")
 	.container.content-block
 		- if($heading) :
 			h2: - echo $heading

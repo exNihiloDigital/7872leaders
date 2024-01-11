@@ -634,7 +634,7 @@
         }
     }
     &.flex-testimonial-slider {
-        background-position: center;
+        background-position: center top;
         background-size: cover;
         position: relative;
 
@@ -671,13 +671,11 @@
                         }
                         h4 {
                             color: white;
-                            font-size: 22px;
+                            font-size: 18px;
+                            font-weight: 400;
                             line-height: 1.5em;
+                            letter-spacing: 1px;
                             margin-bottom: 30px;
-
-                            @include breakpoint(769px up){
-                                font-size: 25px;
-                            }
                         }
                         .testimonial-name-wrapper{
                             .testimonial-image{
@@ -835,26 +833,27 @@
         }
     }
     &.flex-home-hero {
-        background-position: center;
+        background-position: -120px 0;
         background-size:cover;
-        height: 450px;
+        height: 350px;
+        overflow: hidden;
         position: relative;
         width: 100%;
         
         @include breakpoint(600px up){
-            height: 584px;
+            height: 400px;
         }
         @include breakpoint(950px up){
-            height: 871px;
+            height: 500px;
         }
         &:before{
             background: rgb(16,46,74);
-            background: linear-gradient(0deg, rgba(16,46,74,0.90) 20%, rgba(255,255,255,0) 100%);
+            background: linear-gradient(0deg, rgba(16,46,74,0.7) 10%, rgba(255,255,255,0) 100%);
             content: '';
             display: block;
             height: 100%;
             left: 0;
-            opacity: 0.5;
+            opacity: 0.4;
             overflow: hidden;
             position: absolute;
             top: 0;
@@ -876,13 +875,21 @@
             z-index: 100;
             
             @include breakpoint(769px up){
-                padding: 0 80px 10% 5%;
+                padding: 0 80px 2% 2%;
             }
             h1, h2{
                 color: white;
             }
             h1{
+                font-size: 35px;
                 text-align: center;
+                
+                @include breakpoint(600px up){
+                    font-size: 45px;
+                }
+                @include breakpoint(769px up){
+                    font-size: 60px;
+                }
             }
             h2{
                 font-size: 40px;
@@ -892,6 +899,11 @@
 
                 &:after{
                     display: none;
+                }
+            }
+            &.bg-circle{
+                &:before{
+                    opacity: 0.3;
                 }
             }
         }

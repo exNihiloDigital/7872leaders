@@ -264,6 +264,7 @@ const flexLargeImageSlider = ($) => {
 };
 const flexTestimonialSlider = ($) => {
     var testimonialSlider = new Swiper('.testimonial-slider', {
+        autoHeight: true,
         slidesPerView: 1,
         loop: true,
         navigation: {

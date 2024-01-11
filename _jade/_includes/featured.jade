@@ -1,5 +1,7 @@
 - // featured('title'), featured('image'), featured('alt')
 
-.featured.overlay.bg-circle.hrz-padding(style="background-image: url(<?php featured('image') ?>)")
-    .container-lg
-        h1: - featured('title') 
+.featured.bg-circle
+    .container-full
+        aside
+            h1: - featured('title') 
+        section.overlay(style="background-image: url(<?php featured('image') ?>)")

@@ -1,5 +1,10 @@
 // Placeholders
 // ================================================================
+%container-sm {
+    margin: 0 auto;
+    max-width: 100%;
+    width: 950px;
+}
 %container {
     margin: 0 auto;
     max-width: 100%;
@@ -25,12 +30,12 @@
     }
 }
 %vertical-padding {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 40px;
+    padding-bottom: 40px;
 
     @include breakpoint(769px up) {
-        padding-top: 100px;
-        padding-bottom: 100px;
+        padding-top: 80px;
+        padding-bottom: 80px;
     }
 }
 %button {

@@ -1,6 +1,9 @@
 // ================================================================
 //- Basic Content Block Setup
 // ===========================================================
+.container-sm {
+    @extend %container-sm;
+}
 .container {
     @extend %container;
 }

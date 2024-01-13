@@ -938,7 +938,7 @@
     &.flex-full-width-quote{
         position: relative;
 
-        .container, .container-lg{
+        .container, .container-lg, .container-sm{
             .quote-mark{
                 background-color: color(three);
                 background-image: url('../../images/quote-left-solid.svg');
@@ -951,15 +951,17 @@
                 width: 100px;
             }
             h3{
-                font-size: 24px;
+                font-size: 18px;
                 line-height: 1.5em;
                 margin-bottom: 40px;
+                text-align: center;
 
                 @include breakpoint(769px up){
-                    font-size: 30px;
+                    font-size: 22px;
                 }
             }
             .quote-name-wrapper{
+                text-align: center;
                 
                 .quote-image{
                     background-position: center;
@@ -975,11 +977,11 @@
                 p.quote-name{
                     color: color(five);
                     display: inline-block;
-                    font-size: 26px;
+                    font-size: 20px;
                     margin-left: 30px;
     
                     @include breakpoint(769px up){
-                        font-size: 35px;
+                        font-size: 25px;
                     }
                 }
             }
@@ -1035,5 +1037,14 @@
                 }
             }
         }
+    }
+}
+
+// ====================================================
+// Placement adjustments
+// ====================================================
+.flex-content-image + .flex-content-image {
+    .container, .container-lg{
+        padding-top: 0;
     }
 }

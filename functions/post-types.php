@@ -14,13 +14,13 @@ function post_types()
 
     $post_types = array(
         array(
-            'slug'        => 'example',
-            'single_name' => 'Example',
-            'plural_name' => 'Examples',
-            'menu_name'   => 'Example',
+            'slug'        => 'endorsements',
+            'single_name' => 'Endorsement',
+            'plural_name' => 'Endorsements',
+            'menu_name'   => 'Endorsements',
             'description' => '',
             // https://developer.wordpress.org/resource/dashicons/#microphone
-            'dashicon'    => 'dashicons-menu'
+            'dashicon'    => 'dashicons-star-filled'
         )
     );
 
@@ -140,4 +140,4 @@ function post_types()
         register_taxonomy($taxonomy["slug"], $taxonomy["post_type"], $taxonomy_args);
     }
 }
-// add_action('init', 'post_types');
+add_action('init', 'post_types');

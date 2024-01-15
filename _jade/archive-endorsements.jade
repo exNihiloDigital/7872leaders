@@ -1,0 +1,21 @@
+- get_header()
+
+article#archive
+	.container.content-block
+		- if (have_posts()) :
+			- while (have_posts()) : the_post()
+				.endorsement-wrapper
+					aside 
+						- if(get_the_post_thumbnail_url()) :
+							.endorsement-img(style="background-image:url('<?= get_the_post_thumbnail_url();?>');")
+						- endif
+					section 
+						h4: - echo get_the_content()
+						p: - echo get_the_title()
+			- endwhile
+
+			- pagination()
+			- wp_reset_postdata()
+		- endif
+
+- get_footer()

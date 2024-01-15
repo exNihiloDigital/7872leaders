@@ -48,7 +48,7 @@ header {
     .main-header {
         display: none;
 
-        @include breakpoint(769px up) {
+        @include breakpoint(950px up) {
             display: block;
         }
         .container, .container-full {
@@ -296,6 +296,41 @@ header {
         &:last-child{
             border-bottom: 1px solid black;
             padding-bottom: 60px;
+        }
+    }
+}
+#archive{
+    .endorsement-wrapper{
+        align-items: stretch;
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+
+        @include breakpoint(769px up){
+            flex-wrap: nowrap;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        aside{
+            flex-basis: 100%;
+
+            @include breakpoint(769px up){
+                flex-basis: 30%;
+            }
+            .endorsement-img{
+                background-position: center;
+                background-size: cover;
+                height: 300px;
+            }
+        }
+        section{
+            flex-basis: 100%;
+
+            @include breakpoint(769px up){
+                flex-basis: 70%;
+                padding-top: 20px;
+            }
         }
     }
 }

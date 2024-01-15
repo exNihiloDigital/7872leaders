@@ -655,6 +655,10 @@
             text-align: center;
             z-index: 10;
 
+            @include breakpoint(769px up){
+                padding-top: 100px;
+                padding-bottom: 100px;
+            }
             h2 {
                 color: white;
                 margin-bottom: 40px;
@@ -671,13 +675,17 @@
                         }
                         h4 {
                             color: white;
-                            font-size: 18px;
+                            // font-size: 18px;
                             font-weight: 400;
                             line-height: 1.5em;
                             letter-spacing: 1px;
                             margin-bottom: 30px;
                         }
                         .testimonial-name-wrapper{
+                            align-items: center;
+                            display: flex;
+                            justify-content: center;
+
                             .testimonial-image{
                                 background-position: center;
                                 background-size: cover;
@@ -693,9 +701,8 @@
                                 color: white;
                                 display: inline-block;
                                 font-size: 21px;
-                                text-align: left;
                                 vertical-align: middle;
-                                width: calc(100% - 120px);
+                                // width: calc(100% - 120px);
                                 
                                 @include breakpoint(769px up){
                                     font-size: 28px;

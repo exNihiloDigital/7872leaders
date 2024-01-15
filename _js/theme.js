@@ -271,10 +271,10 @@ const flexTestimonialSlider = ($) => {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
-        // autoplay: {
-        //     delay: 12000,
-        //     disableOnInteraction: false,
-        // },
+        autoplay: {
+            delay: 14000,
+            disableOnInteraction: false,
+        },
         pagination: {
             el: '.swiper-pagination',
             clickable: true,

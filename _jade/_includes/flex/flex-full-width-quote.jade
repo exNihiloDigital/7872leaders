@@ -6,19 +6,36 @@
 section.flex-block.flex-full-width-quote.hrz-padding(class="<?= $background_color;?>")
 	.container-sm.vert-padding
 		.quote-mark
-		- if($quote) :
-			h3: - echo $quote
-		- endif
-		- if($quote) :
-			.quote-name-wrapper 
-				- if(get_sub_field('quote_image')):
-					.quote-image(style="background-image: url('<?= get_sub_field('quote_image')['url'];?>');")
-				- endif
-				p.quote-name
-					- echo $quote_name
-		- endif
-		- if(get_sub_field('button')):
+		- $endorsement = get_sub_field('endorsement')
+		- if($endorsement):
+			- foreach($endorsement as $post):
+				- setup_postdata($post)
+				h3: - echo get_the_content()
+				.quote-name-wrapper 
+					- if(get_the_post_thumbnail_url()):
+						.quote-image(style="background-image: url('<?= get_the_post_thumbnail_url(); ?>');")
+					- endif
+					p.quote-name
+						- echo get_the_title()
+			- endforeach
+			- wp_reset_postdata()
 			.center-content
-				a.button.button-ghost(href="<?= get_sub_field('button')['url'];?>" target="<?= get_sub_field('button')['target'];?>" aria-label="<?= get_sub_field('button')['title'];?>" )
-					- echo get_sub_field('button')['title']
+				a.button(href="<?= esc_url(home_url('/')) ?>endorsements") Read More Endorsements
 		- endif
+
+		//- - if($quote) :
+		//- 	h3: - echo $quote
+		//- - endif
+		//- - if($quote) :
+		//- 	.quote-name-wrapper 
+		//- 		- if(get_sub_field('quote_image')):
+		//- 			.quote-image(style="background-image: url('<?= get_sub_field('quote_image')['url'];?>');")
+		//- 		- endif
+		//- 		p.quote-name
+		//- 			- echo $quote_name
+		//- - endif
+		//- - if(get_sub_field('button')):
+		//- 	.center-content
+		//- 		a.button.button-ghost(href="<?= get_sub_field('button')['url'];?>" target="<?= get_sub_field('button')['target'];?>" aria-label="<?= get_sub_field('button')['title'];?>" )
+		//- 			- echo get_sub_field('button')['title']
+		//- - endif

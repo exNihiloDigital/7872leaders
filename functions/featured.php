@@ -82,13 +82,13 @@ function featured( $key )
         array_push($image, esc_url(get_theme_file_uri()) . '/images/featured.jpg');
     }
 
-    if (is_post_type_archive('example') ) {
-        array_push($title, 'Examples');
+    if (is_post_type_archive('endorsements') ) {
+        array_push($title, 'Endorsements');
         array_push($alt, false);
     }
 
-    if (is_post_type_archive('example') && is_paged() ) {
-        array_push($title, 'Examples');
+    if (is_post_type_archive('endorsements') && is_paged() ) {
+        array_push($title, 'Endorsements');
         array_push($alt, true);
     }
 

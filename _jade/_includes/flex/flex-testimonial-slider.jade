@@ -6,19 +6,44 @@ section.flex-block.flex-testimonial-slider(style="background-image: url('<?= $ba
 		- if($heading) :
 			h2: - echo $heading
 		- endif
-		- if (have_rows('testimonials')) :
+		- $endorsements = get_sub_field('testimonials')
+		- if($endorsements) :
 			.swiper.testimonial-slider
 				.swiper-wrapper
-					- while (have_rows('testimonials')) : the_row()
+					- foreach($endorsements as $post):
+						- setup_postdata($post)
 						.swiper-slide
-							h4: - echo get_sub_field('testimonial')
+							- if(get_field('shortened_quote')) :
+								h4: - echo get_field('shortened_quote')
+							- else: 
+								h4: - echo get_the_excerpt()
+							- endif
 							.testimonial-name-wrapper
-								- if(get_sub_field('testimonial_image')):
-									.testimonial-image(style="background-image: url('<?= get_sub_field('testimonial_image')['url'];?>');")
+								- if(get_the_post_thumbnail_url()):
+									.testimonial-image(style="background-image: url('<?= get_the_post_thumbnail_url();?>');")
 								- endif
-								p: - echo get_sub_field('testimonial_name')
-					- endwhile
+								p: - echo get_the_title()
+					- endforeach
+					- wp_reset_postdata()
 				.swiper-button-prev
 				.swiper-button-next
 				.swiper-pagination
+				a.button(href="<?= esc_url(home_url('/')) ?>endorsements") Read More Endorsements
 		- endif
+
+		//- - if (have_rows('testimonials')) :
+		//- 	.swiper.testimonial-slider
+		//- 		.swiper-wrapper
+		//- 			- while (have_rows('testimonials')) : the_row()
+		//- 				.swiper-slide
+		//- 					h4: - echo get_sub_field('testimonial')
+		//- 					.testimonial-name-wrapper
+		//- 						- if(get_sub_field('testimonial_image')):
+		//- 							.testimonial-image(style="background-image: url('<?= get_sub_field('testimonial_image')['url'];?>');")
+		//- 						- endif
+		//- 						p: - echo get_sub_field('testimonial_name')
+		//- 			- endwhile
+		//- 		.swiper-button-prev
+		//- 		.swiper-button-next
+		//- 		.swiper-pagination
+		//- - endif

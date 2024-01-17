@@ -90,6 +90,7 @@ function featured( $key )
     if (is_post_type_archive('endorsements') && is_paged() ) {
         array_push($title, 'Endorsements');
         array_push($alt, true);
+        array_push($image, esc_url(get_theme_file_uri()) . '/images/featured.jpg');
     }
 
     if (is_search() ) {

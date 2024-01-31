@@ -702,7 +702,7 @@
                                 display: inline-block;
                                 font-size: 21px;
                                 vertical-align: middle;
-                                // width: calc(100% - 120px);
+                                width: calc(100% - 100px);
                                 
                                 @include breakpoint(769px up){
                                     font-size: 28px;
@@ -727,6 +727,9 @@
                     .swiper-pagination-bullet-active {
                         background-color: white;
                     }
+                }
+                a.button{
+                    margin-top: 40px;
                 }
             }
         }
